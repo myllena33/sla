@@ -1,0 +1,410 @@
+<html><head><base href="https://www.meusite.com/"><meta charset="UTF-8">
+<title>Fashion Store - Seu Estilo, Sua Essência</title>
+<style>
+:root {
+  --primary: #ff4757;
+  --secondary: #5352ed;
+  --dark: #2f3542;
+  --light: #f1f2f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--light);
+}
+
+header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.hero {
+  margin-top: 80px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.category {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.category:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.products {
+  max-width: 1200px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.product-sizes {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.size {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.size:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background: #ff2e43;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cart-icon:hover svg {
+  animation: bounce 1s infinite;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">Fashion Store</div>
+      <nav class="nav-links">
+        <a href="https://www.meusite.com/novidades">Novidades</a>
+        <a href="https://www.meusite.com/feminino">Feminino</a>
+        <a href="https://www.meusite.com/masculino">Masculino</a>
+        <a href="https://www.meusite.com/acessorios">Acessórios</a>
+      </nav>
+      <div class="cart-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-7-4h7a1 1 0 0 0 .962-.725l3-10A1 1 0 0 0 19 4H5.074L4.18 1.243A1 1 0 0 0 3.222 1H1"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Estilo & Conforto</h1>
+    <p>Descubra as últimas tendências em moda</p>
+  </section>
+
+  <div class="categories">
+    <div class="category">Todos</div>
+    <div class="category">Camisetas</div>
+    <div class="category">Calças</div>
+    <div class="category">Vestidos</div>
+    <div class="category">Sapatos</div>
+  </div>
+
+  <main class="products">
+    <div class="product-card">
+      <div class="product-image">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="var(--primary)">
+          <path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V6h18v12z"/>
+          <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+        </svg>
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Camiseta Básica Premium</h3>
+        <p class="product-price">R$ 89,90</p>
+        <div class="product-sizes">
+          <div class="size">P</div>
+          <div class="size">M</div>
+          <div class="size">G</div>
+          <div class="size">GG</div>
+        </div>
+        <button class="btn">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="var(--primary)">
+          <path d="M7 2L3 8v14h18V8l-4-6H7zm2 2h6l3 4H6l3-4z"/>
+        </svg>
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Calça Jeans Skinny</h3>
+        <p class="product-price">R$ 159,90</p>
+        <div class="product-sizes">
+          <div class="size">38</div>
+          <div class="size">40</div>
+          <div class="size">42</div>
+          <div class="size">44</div>
+        </div>
+        <button class="btn">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="var(--primary)">
+          <path d="M21 4V3c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v1H2v6c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-1zm-9 0h4v1h-4V4z"/>
+        </svg>
+      </div>
+      <div class="product-info">
+        <h3 class="product-title">Vestido Floral</h3>
+        <p class="product-price">R$ 199,90</p>
+        <div class="product-sizes">
+          <div class="size">P</div>
+          <div class="size">M</div>
+          <div class="size">G</div>
+        </div>
+        <button class="btn">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Sobre Nós</h3>
+        <ul>
+          <li><a href="https://www.meusite.com/sobre">Nossa História</a></li>
+          <li><a href="https://www.meusite.com/lojas">Nossas Lojas</a></li>
+          <li><a href="https://www.meusite.com/trabalhe-conosco">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Ajuda</h3>
+        <ul>
+          <li><a href="https://www.meusite.com/faq">FAQ</a></li>
+          <li><a href="https://www.meusite.com/trocas">Trocas e Devoluções</a></li>
+          <li><a href="https://www.meusite.com/envios">Política de Envio</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <ul>
+          <li>contato@fashionstore.com</li>
+          <li>(11) 1234-5678</li>
+          <li>São Paulo, SP</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+<script>
+let cartCount = 0;
+const cartCountElement = document.querySelector('.cart-count');
+const buttons = document.querySelectorAll('.btn');
+const sizes = document.querySelectorAll('.size');
+
+sizes.forEach(size => {
+  size.addEventListener('click', () => {
+    const siblings = size.parentElement.querySelectorAll('.size');
+    siblings.forEach(s => s.style.background = '');
+    siblings.forEach(s => s.style.color = '');
+    siblings.forEach(s => s.style.borderColor = 'var(--dark)');
+    
+    size.style.background = 'var(--primary)';
+    size.style.color = 'white';
+    size.style.borderColor = 'var(--primary)';
+  });
+});
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    cartCount++;
+    cartCountElement.textContent = cartCount;
+    
+    button.textContent = 'Adicionado!';
+    button.style.background = 'var(--secondary)';
+    
+    setTimeout(() => {
+      button.textContent = 'Adicionar ao Carrinho';
+      button.style.background = 'var(--primary)';
+    }, 1000);
+  });
+});
+
+const categories = document.querySelectorAll('.category');
+categories.forEach(category => {
+  category.addEventListener('click', () => {
+    categories.forEach(c => c.style.background = 'white');
+    categories.forEach(c => c.style.color = 'var(--dark)');
+    category.style.background = 'var(--primary)';
+    category.style.color = 'white';
+  });
+});
+</script>
+
+</body></html>
